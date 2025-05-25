@@ -1,0 +1,47 @@
+<form class="container card p-3 w-75" #postForm="ngForm">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      placeholder="Title here"
+      required
+      name="title"
+      [(ngModel)]="title"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Share what you think</label>
+    <textarea
+      [(ngModel)]="body"
+      name="body"
+      class="form-control"
+      id="body"
+      rows="3"
+    ></textarea>
+  </div>
+
+  <div class="d-grid gap-2">
+    <button
+      *ngIf="!isEditMode; else save"
+      class="btn create-post"
+      [disabled]="postForm.invalid"
+      type="submit"
+      (click)="onCreate()"
+    >
+      Create Post
+    </button>
+
+    <ng-template #save>
+      <button
+        class="btn create-post"
+        [disabled]="postForm.invalid"
+        type="submit"
+        (click)="onSave()"
+      >
+        Save Post
+      </button>
+    </ng-template>
+  </div>
+</form>

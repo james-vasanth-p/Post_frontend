@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navigationbar {
+  background-color: #001f3f;
+  color: white;
+  padding: 0.5em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navigationbar .profile {
+  display: flex;
+}
+.container {
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+
+.rows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-family: "Kanit", sans-serif;
+  color: #ead8b1;
+  font-size: 2.25rem;
+}
+.profile img {
+  width: 1.85rem;
+  height: 1.85rem;
+  margin-left: 1.25em;
+}
+.profile:hover {
+  cursor: pointer;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #ead8b1;
+  padding: 0.1em 0.3em;
+}
+
+.nav-item + .nav-item {
+  margin-left: 1em;
+}
+
+.active {
+  color: black;
+  background-color: #ead8b1;
+  border-radius: 5px;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+.profile_details {
+  position: absolute;
+  top: 78px;
+  right: 2px;
+  width: 300px;
+  background-color: #001f3f;
+  border-radius: 5px;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user_details {
+  align-self: flex-start;
+  font-size: 1rem;
+}
+.user_details_item + .user_details_item {
+  margin-top: 0.5em;
+}
+.profile_pic {
+  border-radius: 50%;
+  height: 170px;
+  width: 170px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+button {
+  margin-top: 0.5em;
+  padding: 0.25em 0.35em;
+}
+.menu-icon {
+  display: none;
+  color: #ead8b1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background-color: #001f3f;
+  opacity: 0.9;
+}
+.mobile .nav-list {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 3em;
+  font-size: 0.7rem;
+}
+.mobile .nav-item {
+  padding: 0.5em;
+}
+@media (max-width: 900px) {
+  .navbar {
+    display: none;
+  }
+  .menu-icon,
+  .mobile .navbar {
+    display: block;
+  }
+}

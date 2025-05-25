@@ -1,0 +1,56 @@
+.card-header {
+  background-color: #3a6d8c;
+  color: #ead8b1;
+  font-size: 1.75rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+.edit,
+.create-post a {
+  text-decoration: none;
+  color: #ead8b1;
+}
+
+.edit,
+.create-post {
+  background-color: #001f3f;
+}
+
+.edit:hover,
+.create-post:hover {
+  background-color: #1b3849;
+}
+
+p {
+  text-align: justify;
+  margin: 0;
+}
+
+.post-info {
+  font-weight: bold;
+  background-color: #ead8b1;
+  color: #001f3f;
+  border-radius: 4px;
+  padding: 0.5em;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-footer-item > button + button {
+  margin-left: 0.5em;
+}
+
+@media (max-width: 576px) {
+  .card-footer {
+    display: block;
+  }
+  .post-modify {
+    display: flex;
+    margin-top: 0.5em;
+    justify-content: end;
+  }
+}

@@ -1,0 +1,12 @@
+textarea {
+  height: auto;
+}
+
+.create-post {
+  color: #ead8b1;
+  background-color: #001f3f;
+}
+
+.create-post:hover {
+  background-color: #1b3849;
+}

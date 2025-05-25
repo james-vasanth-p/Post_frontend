@@ -1,0 +1,173 @@
+<div class="navigationbar">
+  <div class="container rows">
+    <div class="logo">
+      <a routerLink="home">PostGram</a>
+    </div>
+    <div class="menu-icon" id="menu-icon" (click)="onMenu()">&#9776;</div>
+    <div class="mobile">
+      <div class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <div class="profile" *ngIf="isUserSignedIn">
+              <div class="logged_in" *ngIf="isUserSignedIn; else logout">
+                <img
+                  (click)="onProfile()"
+                  (click)="closeNavbar()"
+                  src="../../assets/icons/user-solid.svg"
+                  alt="logged_in"
+                />
+              </div>
+              <ng-template #logout
+                ><div class="logged_out">
+                  <img
+                    src="../../assets/icons/user-regular.svg"
+                    alt="logged_out"
+                  /></div
+              ></ng-template>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              (click)="closeNavbar()"
+              routerLink="home"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              (click)="closeNavbar()"
+              routerLink="/posts"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link"
+              >Posts</a
+            >
+          </li>
+          <ng-template #onlogin>
+            <li class="nav-item">
+              <a
+                (click)="closeNavbar()"
+                routerLink="signup"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="nav-link"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                (click)="closeNavbar()"
+                routerLink="login"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="nav-link"
+                >Login</a
+              >
+            </li>
+          </ng-template>
+          <li
+            *ngIf="isUserSignedIn; else onlogin"
+            (click)="onLogout()"
+            (click)="closeNavbar()"
+            class="nav-item nav-link logout"
+          >
+            Logout
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a
+            routerLink="home"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/posts"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            >Posts</a
+          >
+        </li>
+        <ng-template #onlogin>
+          <li class="nav-item">
+            <a
+              routerLink="signup"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link"
+              >Sign Up</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="login"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link"
+              >Login</a
+            >
+          </li>
+        </ng-template>
+        <li
+          *ngIf="isUserSignedIn; else onlogin"
+          (click)="onLogout()"
+          class="nav-item nav-link logout"
+        >
+          Logout
+        </li>
+        <li>
+          <div class="profile">
+            <div class="logged_in" *ngIf="isUserSignedIn; else logout">
+              <img
+                (click)="onProfile()"
+                src="../../assets/icons/user-solid.svg"
+                alt="logged_in"
+              />
+            </div>
+            <ng-template #logout
+              ><div class="logged_out">
+                <img
+                  src="../../assets/icons/user-regular.svg"
+                  alt="logged_out"
+                /></div
+            ></ng-template>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- code to profile details.. -->
+
+    <div *ngIf="showProfile" class="profile_details">
+      <div class="user">
+        <div>
+          <img
+            class="profile_pic"
+            src="/assets/icons/logged-profile.png"
+            alt="profile picture"
+          />
+        </div>
+
+        <h6>{{ userName }}</h6>
+      </div>
+      <div class="user_details">
+        <div class="user_details_item"><b>Email:</b> {{ userEmail }}</div>
+        <div class="user_details_item"><b>Total Posts: </b>{{ noOfPosts }}</div>
+        <button class="user_details_item btn btn-info">
+          <a routerLink="my-posts" (click)="showMyPosts()">My Posts</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

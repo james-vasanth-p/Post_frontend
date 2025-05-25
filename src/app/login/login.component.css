@@ -1,0 +1,93 @@
+/* user-form.component.css */
+
+/* Container for the form */
+.user-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for form fields */
+.user-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-form input,
+.user-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.user-form input:focus,
+.user-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styles */
+.user-form button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-form button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.user-form button:not(:disabled):hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .user-form {
+    padding: 15px;
+  }
+
+  .user-form input,
+  .user-form select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .user-form button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+.err-display {
+  position: fixed;
+  top: 0;
+  /* left: auto; */
+  right: 0;
+  background-color: red;
+  color: white;
+}
+
+button {
+  margin-bottom: 0.5em;
+}

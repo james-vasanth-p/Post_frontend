@@ -1,0 +1,39 @@
+<div class="container mt-3">
+  <div class="d-flex justify-content-end mb-3" *ngIf="!isLoading">
+    <button class="create-post btn">
+      <a routerLink="/create-post">New Post</a>
+    </button>
+  </div>
+  <div class="card mb-4" *ngFor="let post of posts">
+    <div class="card-header post-title text-center py-2">{{ post.title }}</div>
+    <div class="card-body post-body">
+      <p>
+        {{ post.body }}
+      </p>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-item post-info">
+        <span>{{ post.userName }}</span>
+        <span> on {{ post.createdOn }}</span>
+      </div>
+
+      <div class="post-modify card-footer-item">
+        <button
+          *ngIf="loggedUserName == post.userName"
+          class="edit btn"
+          (click)="onEditPost(post.id!)"
+        >
+          Edit
+        </button>
+        <button
+          *ngIf="loggedUserName == post.userName"
+          class="btn btn-danger"
+          (click)="onDeletePost(post.id!)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- (234, 216, 177) -->
